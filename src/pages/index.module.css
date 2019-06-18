@@ -1,0 +1,67 @@
+/*aro background color #E6E7E7*/
+/*aro nav color #58595B*/
+/*aro h2 color darker purple #5b58a5*/
+
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;*/
+
+/** {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	background-color: #E6E7E7; 
+}
+
+h1 {
+	font-size: 2.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+}*/
+
+.logo-nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 2%;
+	padding-right: 2%;
+	position: absolute;
+	color: white;
+	width: 100%;
+}
+
+/*nav {
+	flex-basis: 30%;
+	min-width: 30%;
+}*/
+
+.nav-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+}
+
+.nav-list li {
+	padding-left: 4%;
+	font-size: 1.2em;
+}
+
+/*.page-card-list {
+	list-style: none;
+	width: 100%;
+	padding-left: 2%;
+	padding-right: 2%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5%;
+}
+
+.page-card-list li {
+	flex-basis: 32%;
+}*/

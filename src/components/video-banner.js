@@ -1,0 +1,26 @@
+import React from 'react';
+
+import styles from './video-banner.module.css';
+import aroRot from '../../static/aro-rotation.mp4';
+
+// let image = require('../videos/screenshot.png');
+// let video = require('../videos/night.mp4');
+// let video2 = require('../videos/Rain.mp4');
+// import aroRot from '../videos/aro-rotation.mp4';
+
+
+// <video autoPlay muted loop className="background-video">
+				// 	<source src={video} type="video/mp4"/>
+				// </video>
+
+export default function VideoBanner(props) {
+	return (
+		<React.Fragment>
+			<div className={styles.videoDiv}>
+				<video autoPlay muted loop className={styles.backgroundVideo}>
+					<source src={props.video} type="video/mp4"/>
+				</video>
+			</div>
+		</React.Fragment>
+		)
+}
