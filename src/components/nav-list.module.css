@@ -55,3 +55,8 @@
 .li:hover {
 	background-color: #5b58a5;
 }
+
+.link {
+	text-decoration: none;
+	color: white;
+}

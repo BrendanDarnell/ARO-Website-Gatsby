@@ -68,7 +68,7 @@ export default class LandingPage extends React.Component {
 				<header className={styles.landingHeader} role="banner">
 					<div className={styles.logoNavContainer}>
 						<h1 className={styles.logo}>ARO</h1>
-						<NavMenu handleClick={this.toggleMenu} showMenu={this.state.showMenu}/>
+						<NavMenu handleClick={this.toggleMenu} showMenu={this.state.showMenu} buttonColor="white"/>
 					</div>
 					<VideoBanner video={aroRot}/>
 				</header>

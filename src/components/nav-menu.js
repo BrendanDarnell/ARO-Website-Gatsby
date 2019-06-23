@@ -48,7 +48,7 @@ export default function NavMenu(props) {
 			</nav>)
 		: (
 			<nav role="navigation">
-				<button onClick={props.handleClick} className={styles.menuButton}><i className="fas fa-bars"></i> Menu</button>
+				<button onClick={props.handleClick} className={`${styles.menuButton} ${styles[props.buttonColor]}`}><i className="fas fa-bars"></i> Menu</button>
 				<div className={styles.menu}>
 					<button onClick={props.handleClick} className={styles.closeMenuButton}>X</button>
 					<NavList/>

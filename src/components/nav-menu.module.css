@@ -1,4 +1,5 @@
 .menu {
+    z-index: 5;
 	position: fixed;
 	top: 0;
 	left: -110%;
@@ -8,6 +9,7 @@
 	transition: left 1s;
 	overflow-x: scroll;
 	display: flex;
+    color: white;
 }
 
 .menu.show-menu {
@@ -28,9 +30,17 @@
 }
 
 .menu-button {
-	color: white;
+	/*color: white;*/
     border: none;
     background-color: transparent;
     font-size: 1.5em;
     cursor: pointer;
+}
+
+.menu-button.white {
+    color: white;
+}
+
+.menu-button.purple {
+    color: #5b58a5;
 }
