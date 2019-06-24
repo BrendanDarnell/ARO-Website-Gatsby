@@ -4,7 +4,7 @@ import Head from '../components/head.js';
 import NavMenu from '../components/nav-menu.js';
 
 import styles from './products.module.css';
-import cubes from '../../static/cubes.jpg';
+import cubes from '../../static/Cubes.jpg';
 import products from '../../static/products.jpg';
 
 export default class ProductsPage extends React.Component {
