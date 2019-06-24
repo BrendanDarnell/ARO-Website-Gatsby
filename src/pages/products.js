@@ -68,6 +68,30 @@ export default class ProductsPage extends React.Component {
 						<ul className={styles.productsList}>
 							<li className={styles.product}>
 								<h4 className={styles.productTitle}>Custom Mirrors<span className={styles.productSubTitle}> made to order</span></h4>
+								<p>Our technical team will review your optical drawing or custom specifications and provide a quote.   Typically we offer:</p>
+								<ul className={styles.specsList}>
+									<li>Size: 3mm to 400 mm</li>
+									<li>Surface roughness: 3Ǻ</li>
+									<li>Surface quality: 10/5  Laser Quality (scratch/dig)</li>
+									<li>Surface flatness: we routinely provide 1/10λ Peak to Valley for flat mirrors or Irregularity for radius mirrors at 632.8nm,  with the  ability to achieve 1/20λ Peak to Valley
+										Standard tolerances include +0/-0.005″ for diameter, length or width and ± 0.005″ for thickness</li>
+									<li>Parallelism: 1 minute</li>
+									<li>(alternate specifications/tolerances available upon request)</li>
+								</ul>
+							</li>
+
+							<li className={styles.product}>
+								<h4 className={styles.productTitle}>UV Laser Mirrors<span className={styles.productSubTitle}> Excimer</span></h4>
+								<p>Our technical team will review your optical drawing or custom specifications and provide a quote.   Typically we offer:</p>
+								<ul className={styles.specsList}>
+									<li>Size: 3mm to 400 mm</li>
+									<li>Surface roughness: 3Ǻ</li>
+									<li>Surface quality: 10/5  Laser Quality (scratch/dig)</li>
+									<li>Surface flatness: we routinely provide 1/10λ Peak to Valley for flat mirrors or Irregularity for radius mirrors at 632.8nm,  with the  ability to achieve 1/20λ Peak to Valley
+										Standard tolerances include +0/-0.005″ for diameter, length or width and ± 0.005″ for thickness</li>
+									<li>Parallelism: 1 minute</li>
+									<li>(alternate specifications/tolerances available upon request)</li>
+								</ul>
 							</li>
 						</ul>
 					</section>
