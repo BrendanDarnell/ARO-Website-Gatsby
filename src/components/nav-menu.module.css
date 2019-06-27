@@ -13,7 +13,7 @@
 	width: 100%;
 	background-color: #484848;
 	transition: left 1s;
-	overflow-x: scroll;
+	/*overflow-x: scroll;*/
 	display: flex;
     color: white;
     max-width: 925px;
