@@ -1,5 +1,5 @@
 import React from 'react';
-import { Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import Head from '../components/head.js';
 import NavMenu from '../components/nav-menu.js';
@@ -8,11 +8,23 @@ import styles from './products.module.css';
 import cubes from '../../static/Cubes.jpg';
 import products from '../../static/products.jpg';
 
+let animationStyles = {
+	enter: styles.animateSectionEnter,
+	enterActive: styles.animateSectionEnterActive, 
+	exit: styles.animateSectionExit,
+	exitActive: styles.animateSectionExitActive
+};
+
+// hidden={!this.state.displaySection.mirrors}
+
+console.log('animationStyles', animationStyles);
+
 export default class ProductsPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			showMenu: false,
+			currentSection: 'mirrors',
 			displaySection: {
 				mirrors: true,
 				windows: false
@@ -33,14 +45,17 @@ export default class ProductsPage extends React.Component {
 		event.preventDefault();
 		// console.log(typeof event.target.innerHTML)
 		// console.log(event.target.innerHTML.toLowerCase());
+		// console.log(this.state.displaySection[this.state.currentSection]);
+		// this.setState((state) => ({displaySection: Object.assign({}, state.displaySection, {state.currentSection: false})}}));
 		let selectedSection = event.target.innerHTML.toLowerCase();
 		let updatedDisplaySection = {};
 		Object.keys(this.state.displaySection).forEach(section => {
 			section === selectedSection ? updatedDisplaySection[section] = true : updatedDisplaySection[section] = false;
 		});
 		this.setState(() => ({displaySection: updatedDisplaySection}));
-
 	}
+
+
 
 	render() {
 
@@ -67,7 +82,7 @@ export default class ProductsPage extends React.Component {
 						<li><a className={styles.sectionLinks} href="">Lenses</a></li>
 					</ul>
 
-
+					<CSSTransition in={this.state.displaySection.mirrors} timeout={5000} classNames={animationStyles}>
 					<section className={styles.productSection} hidden={!this.state.displaySection.mirrors} id="mirrors">
 						<h3 className={styles.sectionTitle}>Mirrors</h3>
 						<div className={styles.productInfo}>
@@ -115,7 +130,9 @@ export default class ProductsPage extends React.Component {
 							</li>
 						</ul>
 					</section>
+					</CSSTransition>
 
+					<CSSTransition in={this.state.displaySection.windows} timeout={5000} classNames={animationStyles}>
 					<section className={styles.productSection} hidden={!this.state.displaySection.windows} id="windows">
 						<h3 className={styles.sectionTitle}>Windows</h3>
 						<div className={styles.productInfo}>
@@ -163,6 +180,7 @@ export default class ProductsPage extends React.Component {
 							</li>
 						</ul>
 					</section>
+					</CSSTransition>
 
 
 				</main>
