@@ -50,6 +50,7 @@
     align-items: center;
     height: 17%;
     cursor: pointer;
+    padding-left: 	2%;
 }
 
 .li:hover {
@@ -59,4 +60,6 @@
 .link {
 	text-decoration: none;
 	color: white;
+	width: 100%;
+	/*padding-left: 2%;*/
 }

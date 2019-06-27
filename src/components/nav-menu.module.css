@@ -1,3 +1,9 @@
+@media screen and (max-width:   450px) {
+        .menu {
+            flex-wrap:  wrap;
+        }
+}
+
 .menu {
     z-index: 5;
 	position: fixed;
@@ -10,6 +16,7 @@
 	overflow-x: scroll;
 	display: flex;
     color: white;
+    max-width: 925px;
 }
 
 .menu.show-menu {
