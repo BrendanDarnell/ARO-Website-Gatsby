@@ -7,9 +7,9 @@ import React from 'react';
 import styles from './nav-menu.module.css';
 // import PageCardList from './page-card-list.js';
 import ContactForm from './contact-form.js';
-import NavList from './nav-list.js';
+// import NavList from './nav-list.js';
 
-console.log(styles);
+
 
 // let mockCards = [
 // 	{
@@ -42,7 +42,6 @@ export default function NavMenu(props) {
 				<button onClick={props.handleClick} className={styles.menuButton} hidden><i className="fas fa-bars"></i> Menu</button>
 				<div className={`${styles.showMenu}  ${styles.menu}`}>
 					<button onClick={props.handleClick} className={styles.closeMenuButton}>X</button>
-					<NavList/>
 					<ContactForm/>				
 				</div>
 			</nav>)
@@ -51,7 +50,6 @@ export default function NavMenu(props) {
 				<button onClick={props.handleClick} className={`${styles.menuButton} ${styles[props.buttonColor]}`}><i className="fas fa-bars"></i> Menu</button>
 				<div className={styles.menu}>
 					<button onClick={props.handleClick} className={styles.closeMenuButton}>X</button>
-					<NavList/>
 					<ContactForm/>								
 				</div>
 			</nav>
