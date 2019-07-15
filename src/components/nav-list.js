@@ -29,7 +29,7 @@ export default class NavList extends React.Component {
 			<div className={styles.navListDiv}>
 				<ul className={styles.navList}>
 					<li className={styles.mainLi}>
-						<ToggleMenu handleClick={this.toggleContactMenu} showMenu={this.state.showContactMenu} buttonName={'Products'} buttonClassNames={styles.navButton}/>
+						<ToggleMenu menuItems={['mirrors','lenses']} handleClick={this.toggleContactMenu} showMenu={this.state.showContactMenu} buttonName={'Products'} buttonClassNames={styles.navButton}/>
 					</li>
 					<li className={styles.mainLi}>
 						<button className={styles.navButton}>Markets</button>

@@ -4,22 +4,24 @@ import { CSSTransition } from 'react-transition-group';
 import styles from './toggle-menu.module.css';
 
 export default function ToggleMenu(props) {
-	const menuAnimation = {
-		enter: styles.menuAnimationEnter,
-		enterActive: styles.menuAnimationEnterActive, 
-		exit: styles.menuAnimationExit,
-		exitActive: styles.menuAnimationExitActive
-	};
+	// const menuAnimation = {
+	// 	enter: styles.menuAnimationEnter,
+	// 	enterActive: styles.menuAnimationEnterActive, 
+	// 	exit: styles.menuAnimationExit,
+	// 	exitActive: styles.menuAnimationExitActive
+	// };
 
-	const items = ['mirrors', 'lenses'];
+	const menuItems = props.menuItems;
 
-	const menuItems = items.map((item, index) => {
+	const listItems = menuItems.map((item, index) => {
 		return (
 			<li key={index}>
 				{item}
 			</li>
 		)
 	});
+
+	console.log(props.menuItems);
 
 	console.log('ToggleMenu', props.showMenu);
 	
@@ -29,11 +31,11 @@ export default function ToggleMenu(props) {
 				<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>				
 				{props.showMenu ? (
 					<ul className={`${styles.menu} ${styles.showMenu}`}>
-						{menuItems}
+						{listItems}
 					</ul>)
 					:(
 					 <ul className={styles.menu}>
-						{menuItems}
+						{listItems}
 					</ul>
 				)}				
 			</div>
