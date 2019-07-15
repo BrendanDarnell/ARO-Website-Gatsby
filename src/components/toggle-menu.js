@@ -26,12 +26,16 @@ export default function ToggleMenu(props) {
 	return (
 		
 			<div className={styles.menuDiv}>
-				<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>
-				<CSSTransition in={props.showMenu} timeout={5000} classNames={menuAnimation} mountOnEnter={false} unmountOnExit={true}>
+				<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>				
+				{props.showMenu ? (
 					<ul className={`${styles.menu} ${styles.showMenu}`}>
 						{menuItems}
+					</ul>)
+					:(
+					 <ul className={styles.menu}>
+						{menuItems}
 					</ul>
-				</CSSTransition>
+				)}				
 			</div>
 	)
 }
