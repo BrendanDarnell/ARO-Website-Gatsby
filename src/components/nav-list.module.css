@@ -95,19 +95,23 @@
 	    height: 100%;
 	}
 
-	.main-li {
+	.main-list {
 		display: flex;
 	    align-items: center;
 	    cursor: pointer;
 	    height: 100%;
+	    flex-grow: 1;
 	}
 
 	.nav-button {
 		border: none;
-		background-color: transparent;
+		background-color: white;
 		color: black;
 		cursor: pointer;
 		font-size: 1.1em;
+		padding: 0;
+		text-align: left;
+		width: 100%;
 	}
 
 	.link {

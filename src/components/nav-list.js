@@ -39,7 +39,7 @@ export default class NavList extends React.Component {
 	render () {
 		const navList = Object.keys(navItems).map((item, index) => {
 			return (
-				<li key={item} className={styles.mainLi}>
+				<li key={item} className={styles.mainList}>
 					<ToggleMenu menuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item]} buttonName={item} buttonClassNames={styles.navButton}/>
 				</li>
 			);
