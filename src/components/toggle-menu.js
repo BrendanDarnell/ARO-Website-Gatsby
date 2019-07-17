@@ -15,7 +15,7 @@ export default function ToggleMenu(props) {
 
 	const listItems = menuItems.map((item, index) => {
 		return (
-			<li key={index}>
+			<li key={index} className={styles.subMenuList}>
 				{item}
 			</li>
 		)
