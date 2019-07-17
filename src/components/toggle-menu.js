@@ -20,24 +20,19 @@ export default function ToggleMenu(props) {
 			</li>
 		)
 	});
-
-	console.log(props.menuItems);
-
-	console.log('ToggleMenu', props.showMenu);
 	
 	return (
-		
-			<div className={styles.menuDiv}>
-				<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>				
-				{props.showMenu ? (
-					<ul className={`${styles.menu} ${styles.showMenu}`}>
-						{listItems}
-					</ul>)
-					:(
-					 <ul className={styles.menu}>
-						{listItems}
-					</ul>
-				)}				
-			</div>
+		<div className={styles.menuDiv}>
+			<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>				
+			{props.showMenu ? (
+				<ul className={`${styles.menu} ${styles.showMenu}`}>
+					{listItems}
+				</ul>)
+			:(
+				<ul className={styles.menu}>
+					{listItems}
+				</ul>
+			)}				
+		</div>
 	)
 }

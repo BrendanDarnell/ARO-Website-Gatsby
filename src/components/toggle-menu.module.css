@@ -23,7 +23,9 @@
     transition: transform 1000ms;
     list-style: none;
     padding-left: 0;
-    width: 100%;
+    width: 150%;
+    left: -25%;
+    text-align: center;
 }
 
 .menu.show-menu {

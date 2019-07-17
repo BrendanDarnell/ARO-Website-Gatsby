@@ -6,43 +6,49 @@ import ToggleMenu from './toggle-menu.js';
 
 import styles from './nav-list.module.css';
 
+const navItems = {
+	Products: ['Catalog', 'Mirrors & Windows', 'Prisms & Beamsplitters', 'Polarizers', 'Waveplates'],
+	Markets: ['Medical', 'Semiconductors', 'Research'],
+	Quality: ['ISO', 'Compliance', 'ITAR', 'CMRT Policy', 'Metrology'],
+	Company: ['Supplier Portal', 'Work With Us', 'About Us', 'Facility'],
+	'Get In Touch': []
+}
 
+const showSubMenuState = {};
+Object.keys(navItems).forEach((item, index) => {
+  showSubMenuState[item] = false;
+})
 // <li className={styles.li}><AniLink to="/" cover direction="right" duration={2} bg="#5b58a5" className={styles.link}>Home</AniLink></li>
 export default class NavList extends React.Component {
 	constructor(props) {
+		console.log(showSubMenuState)
 		super(props);
 		this.state = {
-			showContactMenu: false
+			showSubMenus: showSubMenuState
 		}
-		this.toggleContactMenu = this.toggleContactMenu.bind(this);
+		this.toggleSubMenus = this.toggleSubMenus.bind(this);
 	}
 
-	toggleContactMenu() {
-		console.log('showContactMenu', this.state.showContactMenu);
+	toggleSubMenus(event) {
+		console.log('subMenu',event.target.innerHTML);
 		this.setState(state => ({
 			showContactMenu: !state.showContactMenu
 		}));	
 	}
 	
 	render () {
+		const navList = Object.keys(navItems).map((item, index) => {
+			return (
+				<li key={item} className={styles.mainLi}>
+					<ToggleMenu menuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item]} buttonName={item} buttonClassNames={styles.navButton}/>
+				</li>
+			);
+		});
+
 		return (
 			<div className={styles.navListDiv}>
 				<ul className={styles.navList}>
-					<li className={styles.mainLi}>
-						<ToggleMenu menuItems={['mirrors','lenses']} handleClick={this.toggleContactMenu} showMenu={this.state.showContactMenu} buttonName={'Products'} buttonClassNames={styles.navButton}/>
-					</li>
-					<li className={styles.mainLi}>
-						<button className={styles.navButton}>Markets</button>
-					</li>
-					<li className={styles.mainLi}>
-						<button className={styles.navButton}>Quality</button>
-					</li>
-					<li className={styles.mainLi}>
-						<button className={styles.navButton}>Company</button>
-					</li>
-					<li className={styles.mainLi}>
-						<button className={styles.navButton}>Get In Touch</button>
-					</li>
+					{navList}
 				</ul>
 			</div>
 		);
