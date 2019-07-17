@@ -1,42 +1,34 @@
 .menu-div {
 	position: relative;
 	z-index: 5;
+	height: 100%;
+	display: flex;
 
 }
 
 .menu {
     z-index: -1;
 	position: absolute;
-	/*top: -110%;*/
-	/*height: 100%;
-	width: 100%;*/
 	background-color: #484848;
-	/*transition: top 1s;*/
-	/*overflow-x: scroll;*/
-	/*display: flex;
-	flex-direction: column;*/
     color: white;
-    /*max-width: 925px;*/
-    /*display: none;*/
-    /*opacity: 100%;*/
     transform: translateY(-100%);
     transition: transform 1000ms;
     list-style: none;
     padding-left: 0;
-    width: 150%;
-    left: -25%;
+    /*width: 150%;
+    left: -25%;*/
     text-align: center;
 }
 
 .menu.show-menu {
 	display: block;
-	transform: translateY(0);
+	transform: translateY(10vh);
     /*transition: transform 1000ms;*/
 }
 
 .menu-div:hover .menu {
 	display: block;
-	transform: translateY(0);
+	transform: translateY(10vh);
 }
 
 
