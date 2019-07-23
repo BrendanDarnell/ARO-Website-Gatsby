@@ -1,62 +1,117 @@
-.menu-div {
-	position: relative;
-	z-index: 5;
-	height: 100%;
-	display: flex;
-	flex-grow: 1;
+@media screen and (max-width: 800px) {
+	.menu-div {
+		position: relative;
+		z-index: 5;
+		/*height: 100%;*/
+		display: flex;
+		/*flex-grow: 1;*/
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.menu {
+		/*position: absolute;*/
+		background-color: #484848;
+	    color: white;
+	    max-height: 0;
+	    /*only need overflow if transitioning height*/
+	    overflow: hidden;
+	    /*transition: transform 1000ms;*/
+	    list-style: none;
+	    padding-left: 0;
+	    width: 100%;
+	    text-align: center;
+	    transition: max-height 750ms;
+	}
+
+	.menu.show-menu {
+		display: block;
+		/*transform: translateY(10vh);*/
+		max-height: 40vh;
+	}
+
+	.menu-div:hover .menu {
+		display: block;
+		/*transform: translateY(10vh);*/
+		max-height: 40vh;
+		z-index: 0;
+	}
+
+	.sub-menu-list {
+		margin-top: 5%;
+		margin-bottom: 5%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+
 }
 
-.menu {
-    z-index: -1;
-	position: absolute;
-	background-color: #484848;
-    color: white;
-    max-height: 0;
-    /*only need overflow if transitioning height*/
-    overflow: hidden;
-    /*transition: transform 1000ms;*/
-    list-style: none;
-    padding-left: 0;
-    width: 200%;
-    left: -50%;
-    text-align: center;
-    transition: max-height 750ms;
-    transform: translateY(10vh);
-}
 
-.menu.show-menu {
-	display: block;
-	/*transform: translateY(10vh);*/
-	max-height: 40vh;
-}
 
-.menu-div:hover .menu {
-	display: block;
-	/*transform: translateY(10vh);*/
-	max-height: 40vh;
-	z-index: 0;
-}
 
-.sub-menu-list {
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
 
-.menuAnimationEnter {
-	transform: translateY(-100%);
-}
-	
-.menuAnimationEnterActive {
-	transform: translateY(0);
-    transition: transform 1000ms;
-}
+@media screen and (min-width: 800px) {
+	.menu-div {
+		position: relative;
+		z-index: 5;
+		height: 100%;
+		display: flex;
+		/*flex-grow: 1;*/
+	}
 
-.menuAnimationExit {
-	transform: translateY(0);
-}
+	.menu {
+	    z-index: -1;
+		position: absolute;
+		background-color: #484848;
+	    color: white;
+	    max-height: 0;
+	    /*only need overflow if transitioning height*/
+	    overflow: hidden;
+	    /*transition: transform 1000ms;*/
+	    list-style: none;
+	    padding-left: 0;
+	    width: 250%;
+	    left: -75%;
+	    text-align: center;
+	    transition: max-height 750ms;
+	    transform: translateY(10vh);
+	}
 
-.menuAnimationExitActive {
-	transform: translateY(-100%);
-    transition: transform 1000ms;
-}
+	.menu.show-menu {
+		display: block;
+		/*transform: translateY(10vh);*/
+		max-height: 40vh;
+	}
 
+	.menu-div:hover .menu {
+		display: block;
+		/*transform: translateY(10vh);*/
+		max-height: 40vh;
+		z-index: 0;
+	}
+
+	.sub-menu-list {
+		margin-top: 5%;
+		margin-bottom: 5%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+
+	.menuAnimationEnter {
+		transform: translateY(-100%);
+	}
+		
+	.menuAnimationEnterActive {
+		transform: translateY(0);
+	    transition: transform 1000ms;
+	}
+
+	.menuAnimationExit {
+		transform: translateY(0);
+	}
+
+	.menuAnimationExitActive {
+		transform: translateY(-100%);
+	    transition: transform 1000ms;
+	}
+}

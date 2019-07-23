@@ -47,6 +47,7 @@ export default class NavList extends React.Component {
 
 		return (
 			<div className={styles.navListDiv}>
+				<button onClick={this.props.closeResponsiveMenu} className={styles.closeMenuButton}>X</button>
 				<ul className={styles.navList}>
 					{navList}
 				</ul>
