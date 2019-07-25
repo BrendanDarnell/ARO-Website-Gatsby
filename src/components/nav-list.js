@@ -9,7 +9,7 @@ import styles from './nav-list.module.css';
 const navItems = {
 	Products: ['Catalog', 'Mirrors & Windows', 'Prisms & Beamsplitters', 'Polarizers', 'Waveplates'],
 	Markets: ['Medical', 'Semiconductors', 'Research'],
-	Quality: ['ISO', 'Compliance', 'ITAR', 'CMRT Policy', 'Metrology'],
+	Quality: ['ISO 9001', 'Compliance', 'ITAR', 'CMRT Policy', 'Metrology'],
 	Company: ['Supplier Portal', 'Work With Us', 'About Us', 'Facility'],
 	'Get In Touch': []
 }
