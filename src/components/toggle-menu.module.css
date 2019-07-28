@@ -1,5 +1,5 @@
 @media screen and (max-width: 800px) {
-	.menu-div {
+	.menu-item-container {
 		position: relative;
 		z-index: 5;
 		/*height: 100%;*/
@@ -9,7 +9,7 @@
 		flex-direction: column;
 	}
 
-	.menu {
+	.sub-menu {
 		/*position: absolute;*/
 		background-color: #484848;
 	    color: white;
@@ -24,20 +24,20 @@
 	    transition: max-height 750ms;
 	}
 
-	.menu.show-menu {
+	.sub-menu.show-sub-menu {
 		display: block;
 		/*transform: translateY(10vh);*/
 		max-height: 40vh;
 	}
 
-	.menu-div:hover .menu {
+	.menu-item-container:hover .sub-menu {
 		display: block;
 		/*transform: translateY(10vh);*/
 		max-height: 40vh;
-		z-index: 0;
+		/*z-index: 0;*/
 	}
 
-	.sub-menu-list {
+	.sub-menu-item {
 		margin-top: 5%;
 		margin-bottom: 5%;
 		margin-left: 2%;
@@ -51,7 +51,7 @@
 
 
 @media screen and (min-width: 800px) {
-	.menu-div {
+	.menu-item-container {
 		position: relative;
 		z-index: 5;
 		height: 100%;
@@ -59,7 +59,7 @@
 		/*flex-grow: 1;*/
 	}
 
-	.menu {
+	.sub-menu {
 	    z-index: -1;
 		position: absolute;
 		background-color: #484848;
@@ -77,20 +77,20 @@
 	    transform: translateY(10vh);
 	}
 
-	.menu.show-menu {
+	.sub-menu.show-sub-menu {
 		display: block;
 		/*transform: translateY(10vh);*/
 		max-height: 40vh;
 	}
 
-	.menu-div:hover .menu {
+	.menu-item-container:hover .sub-menu {
 		display: block;
 		/*transform: translateY(10vh);*/
 		max-height: 40vh;
 		z-index: 0;
 	}
 
-	.sub-menu-list {
+	.sub-menu-item {
 		margin-top: 5%;
 		margin-bottom: 5%;
 		margin-left: 2%;

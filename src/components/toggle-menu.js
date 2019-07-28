@@ -11,25 +11,25 @@ export default function ToggleMenu(props) {
 	// 	exitActive: styles.menuAnimationExitActive
 	// };
 
-	const menuItems = props.menuItems;
+	const subMenuItems = props.subMenuItems;
 
-	const listItems = menuItems.map((item, index) => {
+	const listItems = subMenuItems.map((item, index) => {
 		return (
-			<li key={index} className={styles.subMenuList}>
+			<li key={index} className={styles.subMenuItem}>
 				{item}
 			</li>
 		)
 	});
 	
 	return (
-		<div className={styles.menuDiv}>
-			<button onClick={props.handleClick} className={props.buttonClassNames}>{props.buttonName}</button>				
+		<div className={styles.menuItemContainer}>
+			<button onClick={props.handleClick} id={props.id} className={props.buttonClassNames}>{props.buttonName}</button>				
 			{props.showMenu ? (
-				<ul className={`${styles.menu} ${styles.showMenu}`}>
+				<ul className={`${styles.subMenu} ${styles.showSubMenu}`}>
 					{listItems}
 				</ul>)
 			:(
-				<ul className={styles.menu}>
+				<ul className={styles.subMenu}>
 					{listItems}
 				</ul>
 			)}				

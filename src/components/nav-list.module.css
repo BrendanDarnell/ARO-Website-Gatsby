@@ -30,37 +30,29 @@
    
 
 @media screen and (max-width: 800px) {
-	.nav-list-div {
+	.nav-menu-container {
 		z-index: 5;
 		position: fixed;
-		top: 0;
+		top: 10vh;
 		/*left: -110%;*/
 		left: 0;
-		height: 100vh;
+		height: 0;
 		width: 100%;
 		background-color: #484848;
-		transition: left 1s;
-		overflow-y: scroll;
+		transition: height 1s;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 	    color: white;
 	    max-width: 500px;
 	}
 
-	.close-menu-button {
-		position: absolute;
-	    top: 0;
-	    right: 0;
-	    margin-top: 1%;
-	    margin-right: 1%;
-	    color: white;
-	    font-size: 1.5em;
-	    border: none;
-	    background-color: transparent;
-	    cursor: pointer;
-}
+	.nav-menu-container.show-responsive-menu {
+		overflow-y: scroll;	
+		height: 90vh;				
+	}
 
-	.nav-list {
+	.nav-menu {
 		list-style: none;
 		display: flex;
 		flex-direction: column;
@@ -70,17 +62,16 @@
 	    /*height: 50%;*/
 	    width: 100%;
 	    padding-left: 0;
-	    margin-top: 15%;
+	    margin-top: 0;
 	}
 
-	.main-list {
+	.nav-menu-item {
 		display: flex;
 	    align-items: center;
 	    cursor: pointer;
 	    /*flex-grow: 1;*/
 	    width: 100%;
 	    min-height: 10vh;
-	
 	}
 
 	.li:hover {
@@ -100,12 +91,29 @@
 		/*padding-left: 2%;*/
 	}
 
+	.open-menu-button {
+		border: none;
+    	background-color: transparent;
+    	font-size: 2.5em;
+    	cursor: pointer;
+	}
+
+	.close-menu-button {
+		border: none;
+    	background-color: transparent;
+    	font-size: 2.5em;
+    	cursor: pointer;
+	}
 }
 
 @media screen and (min-width: 800px) {
-	.nav-list-div {
-		/*list-style: none;*/
+	nav {
 		width: 50%;
+	}
+	
+	.nav-menu-container {
+		/*list-style: none;*/
+		width: 100%;
 		/*padding-left: 3%;
 		padding-right: 3%;*/
 		display: flex;
@@ -116,7 +124,7 @@
 		height: 100%;
 	}
 
-	.nav-list {
+	.nav-menu {
 		list-style: none;
 		display: flex;
 		/*flex-wrap: wrap;*/
@@ -128,7 +136,7 @@
 	    height: 100%;
 	}
 
-	.main-list {
+	.nav-menu-item {
 		display: flex;
 	    align-items: center;
 	    cursor: pointer;
@@ -156,5 +164,20 @@
 
 	.close-menu-button {
 		display: none;
+	}
+
+	.open-menu-button {
+		display: none;
+	}
+
+	:global(#get-in-touch) {
+		background-color: purple;
+	    white-space: nowrap;
+	    margin-top: 10%;
+	    margin-bottom: 10%;
+	    border-radius: 10px;
+	    padding-left: 5%;
+	    padding-right: 5%;
+	    color: white;	
 	}
 }

@@ -14,44 +14,81 @@ const navItems = {
 	'Get In Touch': []
 }
 
-const showSubMenuState = {};
+const initSubMenuState = {};
 Object.keys(navItems).forEach((item, index) => {
-  showSubMenuState[item] = false;
+  initSubMenuState[item.toLowerCase()] = false;
 })
 // <li className={styles.li}><AniLink to="/" cover direction="right" duration={2} bg="#5b58a5" className={styles.link}>Home</AniLink></li>
 export default class NavList extends React.Component {
 	constructor(props) {
-		console.log(showSubMenuState)
+		console.log(initSubMenuState)
 		super(props);
 		this.state = {
-			showSubMenus: showSubMenuState
+			showResponsiveMenu: false,
+			showSubMenus: initSubMenuState,
 		}
+		this.toggleResponsiveMenu = this.toggleResponsiveMenu.bind(this);
 		this.toggleSubMenus = this.toggleSubMenus.bind(this);
 	}
 
-	toggleSubMenus(event) {
-		console.log('subMenu',event.target.innerHTML);
+	// close the sub menus when there is a click anywhere on the document besides a menu
+	componentDidMount() {
+		console.log('I mounted');
+		window.addEventListener('click', () => {
+			this.setState({showSubMenus: initSubMenuState});
+			console.log('menu is clearing');
+		});
+	}
+
+	toggleResponsiveMenu() {
+		console.log('showResponsiveMenu', this.state.showResponsiveMenu);
 		this.setState(state => ({
-			showContactMenu: !state.showContactMenu
-		}));	
+			showResponsiveMenu: !state.showResponsiveMenu
+		}));
+	}
+
+	toggleSubMenus(event) {
+		event.stopPropagation();
+		console.log('subMenu',event.target.id);
+		console.log('navState',this.state.showSubMenus);
+		let selectedSubMenu = event.target.id;
+		let updatedSubMenus = {};
+		Object.keys(this.state.showSubMenus).forEach(subMenu => {
+			selectedSubMenu === subMenu ? updatedSubMenus[subMenu] = true : updatedSubMenus[subMenu] = false;
+		});
+		this.setState({showSubMenus: updatedSubMenus});	
 	}
 	
 	render () {
 		const navList = Object.keys(navItems).map((item, index) => {
 			return (
-				<li key={item} className={styles.mainList}>
-					<ToggleMenu menuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item]} buttonName={item} buttonClassNames={styles.navButton}/>
+				<li key={item} className={styles.navMenuItem}>
+					<ToggleMenu id={item.toLowerCase().replace(/ /g,'-')} subMenuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item.toLowerCase()]} buttonName={item} buttonClassNames={styles.navButton}/>
 				</li>
 			);
 		});
 
 		return (
-			<div className={styles.navListDiv}>
-				<button onClick={this.props.closeResponsiveMenu} className={styles.closeMenuButton}>X</button>
-				<ul className={styles.navList}>
-					{navList}
-				</ul>
-			</div>
+			<nav role="navigation">
+				{this.state.showResponsiveMenu ? (
+					<React.Fragment>
+						<button className={styles.closeMenuButton} onClick={this.toggleResponsiveMenu}>X</button>
+						<div className={`${styles.navMenuContainer} ${styles.showResponsiveMenu}`}>
+							<ul className={styles.navMenu}>
+								{navList}
+							</ul>
+						</div>
+					</React.Fragment> )
+				:(
+					<React.Fragment>
+						<button className={styles.openMenuButton} onClick={this.toggleResponsiveMenu}><i className="fas fa-bars"></i></button>
+						<div className={styles.navMenuContainer}>
+							<ul className={styles.navMenu}>
+								{navList}
+							</ul>
+						</div>
+					</React.Fragment> )}
+			</nav>
 		);
 	}
 }
