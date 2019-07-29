@@ -1,6 +1,7 @@
 import React from 'react';
 
 import aroRot from '../../static/aro-rotation.mp4';
+
 // import productsImg from '../images/products.jpg';
 // import capabilitiesImg from '../images/capabilities.jpg';
 // import companyImg from '../images/company.jpg';
@@ -11,7 +12,8 @@ import VideoBanner from '../components/video-banner.js';
 // import NavMenu from '../components/nav-menu.js';
 import NavList from '../components/nav-list.js';
 import Head from '../components/head.js';
-import ContactMenu from '../components/contact-menu.js';
+// import ContactMenu from '../components/contact-menu.js';
+import NewsTicker from '../components/news-ticker.js'
 
 console.log(styles);
 console.log(styles["landing-header"])
@@ -70,15 +72,14 @@ export default class LandingPage extends React.Component {
 				<Head/>
 				<header className={styles.landingHeader} role="banner">
 					<div className={styles.logoNavContainer}>
-						<h1 className={styles.logo}>ARO</h1>
+						<h1 className={styles.logo}>ARO <span className={styles.ARO}>Alpine Research Optics</span></h1>
 						<NavList/>
 					</div>
-					<ContactMenu handleClick={this.toggleContactMenu} showMenu={this.state.showContactMenu} buttonColor="white"/>
-					<VideoBanner video={aroRot}/>
 				</header>
 				
 				<main role="main">
-					
+					<VideoBanner video={aroRot}/>
+					<NewsTicker/>
 				</main>
 			</React.Fragment>
 		)

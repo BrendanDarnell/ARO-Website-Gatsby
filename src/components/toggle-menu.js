@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import styles from './toggle-menu.module.css';
 
@@ -16,12 +17,16 @@ export default function ToggleMenu(props) {
 	const listItems = subMenuItems.map((item, index) => {
 		return (
 			<li key={index} className={styles.subMenuItem}>
-				{item}
+				<AniLink to={item} cover direction="right" duration={2} bg="#5b58a5" className={styles.link}>{item}</AniLink>
 			</li>
 		)
 	});
 	
 	return (
+		// if(listItems.length === 0) {
+
+		// }
+		
 		<div className={styles.menuItemContainer}>
 			<button onClick={props.handleClick} id={props.id} className={props.buttonClassNames}>{props.buttonName}</button>				
 			{props.showMenu ? (
