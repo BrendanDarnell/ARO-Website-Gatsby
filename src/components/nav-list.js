@@ -61,6 +61,15 @@ export default class NavList extends React.Component {
 	
 	render () {
 		const navList = Object.keys(navItems).map((item, index) => {
+			if(!navItems[item] || navItems[item].length <= 0) {
+				return(
+					<li key={item} className={styles.navMenuItem}>
+						<AniLink to={item.toLowerCase().replace(/ /g,'-')} cover direction="right" duration={2} bg="#5b58a5" id={item.toLowerCase().replace(/ /g,'-')} className={styles.navButton}>
+							{item}
+						</AniLink>
+					</li>
+				)
+			}
 			return (
 				<li key={item} className={styles.navMenuItem}>
 					<ToggleMenu id={item.toLowerCase().replace(/ /g,'-')} subMenuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item.toLowerCase()]} buttonName={item} buttonClassNames={styles.navButton}/>

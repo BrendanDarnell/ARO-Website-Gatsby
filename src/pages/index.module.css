@@ -23,6 +23,11 @@ h1 {
 h2 {
 	font-family: 'Montserrat', sans-serif;
 }*/
+@media screen and (max-width: 800px) {
+	.ARO {
+		display: none;
+	}
+}
 
 .logo-nav-container {
 	display: flex;
