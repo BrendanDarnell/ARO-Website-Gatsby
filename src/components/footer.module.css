@@ -1,0 +1,48 @@
+.footer {
+	color: white;
+	background-color: #484848;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 2%;
+}
+
+.header {
+	text-align: center;
+	font-size: 1.8em;
+	margin-bottom: 2%;
+	margin-top: 10%;
+}
+
+.header.logo {
+	margin-top: 2%;
+}
+
+.address {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2%;
+}
+
+.copyright {
+	margin-bottom: 0;
+    padding-bottom: 1%;
+    font-size: .9em;
+    font-weight: normal;
+    text-align: center;
+}
+
+.newsfeed {
+	text-align: center;
+}
+
+@media screen and (min-width: 950px) {
+	.contact {
+		display: flex;
+	}
+
+	.address {
+		min-width: 20%;
+	}
+}
+

@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import Head from '../components/head.js';
 import NavMenu from '../components/nav-menu.js';
-import Map from '../components/map.js';
+import Footer from '../components/footer.js';
 
 import styles from './products.module.css';
 import cubes from '../../static/Cubes.jpg';
@@ -183,7 +183,7 @@ export default class ProductsPage extends React.Component {
 					</section>
 					</CSSTransition>
 
-					<Map/>
+					<Footer/>
 
 
 				</main>
