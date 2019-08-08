@@ -12,6 +12,7 @@ import VideoBanner from '../components/video-banner.js';
 // import NavMenu from '../components/nav-menu.js';
 import NavList from '../components/nav-list.js';
 import Head from '../components/head.js';
+import Footer from '../components/footer.js';
 // import ContactMenu from '../components/contact-menu.js';
 import NewsTicker from '../components/news-ticker.js'
 
@@ -81,6 +82,7 @@ export default class LandingPage extends React.Component {
 					<VideoBanner video={aroRot}/>
 					<NewsTicker/>
 				</main>
+				<Footer/>
 			</React.Fragment>
 		)
 	}
