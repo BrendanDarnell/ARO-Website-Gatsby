@@ -1,24 +1,27 @@
 import React from 'react';
 
 import aroRot from '../../static/aro-rotation.mp4';
+import night from '../../static/night.mp4';
+import rain from '../../static/Rain.mp4';
+
 
 // import productsImg from '../images/products.jpg';
 // import capabilitiesImg from '../images/capabilities.jpg';
 // import companyImg from '../images/company.jpg';
 
 import styles from './index.module.css';
-import VideoBanner from '../components/video-banner.js';
+import VideoShow from '../components/video-show.js';
 // import PageCard from './page-card.js';
 // import NavMenu from '../components/nav-menu.js';
 import NavList from '../components/nav-list.js';
 import Head from '../components/head.js';
 import Footer from '../components/footer.js';
 // import ContactMenu from '../components/contact-menu.js';
-import NewsTicker from '../components/news-ticker.js'
+// import NewsTicker from '../components/news-ticker.js'
 
-console.log(styles);
-console.log(styles["landing-header"])
-console.log(styles.logoNavContainer);
+// console.log(styles);
+// console.log(styles["landing-header"])
+// console.log(styles.logoNavContainer);
 
 	// <nav role="navigation">
 	// 						<ul className="nav-list">
@@ -79,8 +82,10 @@ export default class LandingPage extends React.Component {
 				</header>
 				
 				<main role="main">
-					<VideoBanner video={aroRot}/>
-					<NewsTicker/>
+					<VideoShow 
+					videos={[aroRot, night, rain]}
+					captions={['ARO rotation spinning around', 'Beautiful night sky', 'Raining cats and dogs']}
+					headings={['Rotation', 'Night', 'Rain']}/>
 				</main>
 				<Footer/>
 			</React.Fragment>

@@ -18,7 +18,7 @@ export default function VideoBanner(props) {
 		<React.Fragment>
 			<div className={styles.videoDiv}>
 				<video autoPlay muted loop className={styles.backgroundVideo}>
-					<source src={props.video} type="video/mp4"/>
+					<source src={props.video} type="video/mp4" onChange={props.handleChange}/>
 				</video>
 			</div>
 		</React.Fragment>
