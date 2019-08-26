@@ -1,8 +1,10 @@
 import React from 'react';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
-import aroRot from '../../static/aro-rotation.mp4';
-import night from '../../static/night.mp4';
-import rain from '../../static/Rain.mp4';
+// import aroRot from '../../static/aro-rotation.mp4';
+// import night from '../../static/night.mp4';
+// import rain from '../../static/Rain.mp4';
+import introVid from '../../static/aro-video.mp4';
 
 
 // import productsImg from '../images/products.jpg';
@@ -10,7 +12,8 @@ import rain from '../../static/Rain.mp4';
 // import companyImg from '../images/company.jpg';
 
 import styles from './index.module.css';
-import VideoShow from '../components/video-show.js';
+// import VideoShow from '../components/video-show.js';
+import VideoBanner from '../components/video-banner.js';
 // import PageCard from './page-card.js';
 // import NavMenu from '../components/nav-menu.js';
 import NavList from '../components/nav-list.js';
@@ -76,16 +79,18 @@ export default class LandingPage extends React.Component {
 				<Head/>
 				<header className={styles.landingHeader} role="banner">
 					<div className={styles.logoNavContainer}>
-						<h1 className={styles.logo}>ARO <span className={styles.ARO}>Alpine Research Optics</span></h1>
-						<NavList/>
+						<span className={styles.logo}>ARO <span className={styles.ARO}>Alpine Research Optics</span></span>
+						<NavList hasTopLevelLink={false}/>
 					</div>
 				</header>
 				
 				<main role="main">
-					<VideoShow 
-					videos={[aroRot, night, rain]}
-					captions={['ARO rotation spinning around', 'Beautiful night sky', 'Raining cats and dogs']}
-					headings={['Rotation', 'Night', 'Rain']}/>
+					<VideoBanner video={introVid}/>
+					<div className={styles.videoHeader}>
+						<h1 className={styles.h1}>Alpine Research Optics</h1>
+						<h2 className={styles.bannerText}>A Precision Optics Company</h2>
+						<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
+					</div>
 				</main>
 				<Footer/>
 			</React.Fragment>

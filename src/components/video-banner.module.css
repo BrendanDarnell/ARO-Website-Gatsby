@@ -8,12 +8,12 @@
 }
 
 .video-div {
-	height: 85vh;
+	height: 100vh;
 	width: 100%;
 	margin: 0;
 	/*background-color: rgba(0, 0, 0, .75);*/
 	/*purple background*/
 	background-color: rgba(39, 9, 35, .80);
 	overflow: hidden;
-	margin-top: 10vh;
+	/*margin-top: 10vh;*/
 }

@@ -37,20 +37,73 @@ h2 {
 	padding-right: 2%;
 	color: black;
 	width: 100%;
-	height: 10vh;
+	height: 15vh;
 	position: fixed;
-	background-color: white;
+	/*background-color: white;*/
+	background-color: transparent;
 	z-index: 10;
 }
 
 .logo {
 	margin: 0;
+	font-family: montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+    color: white;
 }
 
 .ARO {
 	font-style: italic;
 	color: grey;
 	font-size: .6em;
+	display: none;
+}
+
+.videoHeader {
+	position: absolute;
+	top: 20vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.h1 {
+	color: white;
+	/*position: absolute;
+    top: 20vh;*/
+    width: 100%;
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 0;
+}
+
+.banner-text {
+	color: white;
+	/*position: absolute;
+    top: 40vh;*/
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
+.contact {
+	display: flex;
+   	align-items: center;
+   	justify-content: space-around;
+	background-color: purple;
+    /*white-space: nowrap;
+    margin-top: 10%;
+    margin-bottom: 10%;*/
+    border-radius: 10px;
+    /*padding-left: 5%;
+    padding-right: 5%;*/
+    color: white;
+    width: 30%;	
+    height: 10vh;
+    margin-top: 5%;
+    text-decoration: none;
 }
 
 /*nav {

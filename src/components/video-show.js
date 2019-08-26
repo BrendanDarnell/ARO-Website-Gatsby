@@ -31,7 +31,8 @@ export default class VideoShow extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currVideo: 0
+			currVideo: 0,
+			showText: false
 		};
 		// this.initVideos = this.initVideos.bind(this);
 		this.nextVideo = this.nextVideo.bind(this);
@@ -129,14 +130,12 @@ export default class VideoShow extends React.Component {
 		// );
 		return (
 			<SwitchTransition>
-			<CSSTransition  timeout={5000} classNames={videoAnimation} key={this.state.currVideo}>
-				<div>
-				<VideoBanner video={this.props.videos[this.state.currVideo]}/>
-				</div>
-				
-			</CSSTransition>
-			</SwitchTransition>
-			
-			)
+				<CSSTransition  timeout={5000} classNames={videoAnimation} key={this.state.currVideo} onEntered={()=>console.log('onEnteredCB')}>
+					<div>
+						<VideoBanner video={this.props.videos[this.state.currVideo]}/>
+					</div>	
+				</CSSTransition>
+			</SwitchTransition>	
+		);
 	}
 }
