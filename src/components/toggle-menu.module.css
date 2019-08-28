@@ -82,7 +82,7 @@
 	    left: -75%;
 	    text-align: center;
 	    transition: max-height 750ms;
-	    transform: translateY(10vh);
+	    transform: translateY(12vh);
 	}
 
 	.sub-menu.show-sub-menu {

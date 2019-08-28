@@ -5,6 +5,8 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 // import night from '../../static/night.mp4';
 // import rain from '../../static/Rain.mp4';
 import introVid from '../../static/aro-video.mp4';
+import logo from '../../static/logo.png';
+
 
 
 // import productsImg from '../images/products.jpg';
@@ -79,7 +81,7 @@ export default class LandingPage extends React.Component {
 				<Head/>
 				<header className={styles.landingHeader} role="banner">
 					<div className={styles.logoNavContainer}>
-						<span className={styles.logo}>ARO <span className={styles.ARO}>Alpine Research Optics</span></span>
+						<img className={styles.logo} src={logo} alt="Alpine Research Optics Logo"/>
 						<NavList hasTopLevelLink={false}/>
 					</div>
 				</header>
