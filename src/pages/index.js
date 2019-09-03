@@ -5,6 +5,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 // import night from '../../static/night.mp4';
 // import rain from '../../static/Rain.mp4';
 import introVid from '../../static/aro-video.mp4';
+// const VideoBanner = React.lazy(() => import('../components/video-banner.js'));
 import logo from '../../static/logo.png';
 
 
@@ -62,16 +63,23 @@ export default class LandingPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showContactMenu: false
+			pageLoaded: false
 		}
-		this.toggleContactMenu = this.toggleContactMenu.bind(this);
+		this.handlePageLoad = this.handlePageLoad.bind(this);
 	}
 
-	toggleContactMenu() {
-		console.log('showContactMenu', this.state.showContactMenu);
-		this.setState(state => ({
-			showContactMenu: !state.showContactMenu
-		}));	
+	componentDidMount() {
+		this.test = 'foobar';
+		this.dbl = window.addEventListener('dblclick', this.handlePageLoad);
+		this.load = window.addEventListener('load', ()=>console.log('loaded'));
+		this.ready = document.addEventListener('readystatechange', () => console.log('readyState', document.readyState));
+		console.log('home page mounted');
+	}
+
+	handlePageLoad() {
+		this.setState({pageLoaded: true});
+		console.log('handlePageLoadCalled');
+		console.log(this.load, this.dbl, this.test);
 	}
 
 	render() {
@@ -87,14 +95,15 @@ export default class LandingPage extends React.Component {
 				</header>
 				
 				<main role="main">
-					<VideoBanner video={introVid}/>
+					{this.state.pageLoaded && 
+						<VideoBanner video={introVid}/>}
 					<div className={styles.videoHeader}>
 						<h1 className={styles.h1}>Alpine Research Optics</h1>
 						<h2 className={styles.bannerText}>A Precision Optics Company</h2>
 						<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
 					</div>
 				</main>
-				<Footer/>
+				{/*<Footer/>*/}
 			</React.Fragment>
 		)
 	}
