@@ -69,11 +69,12 @@ export default class LandingPage extends React.Component {
 	}
 
 	componentDidMount() {
-		this.test = 'foobar';
-		this.dbl = window.addEventListener('dblclick', this.handlePageLoad);
-		this.load = window.addEventListener('load', ()=>console.log('loaded'));
-		this.ready = document.addEventListener('readystatechange', () => console.log('readyState', document.readyState));
-		console.log('home page mounted');
+		this.handlePageLoad();
+		// this.test = 'foobar';
+		// this.dbl = window.addEventListener('dblclick', this.handlePageLoad);
+		// this.load = window.addEventListener('load', ()=>console.log('loaded'));
+		// this.ready = document.addEventListener('readystatechange', () => console.log('readyState', document.readyState));
+		// console.log('home page mounted');
 	}
 
 	handlePageLoad() {
