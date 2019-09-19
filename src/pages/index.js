@@ -77,6 +77,13 @@ export default class LandingPage extends React.Component {
 		// console.log('home page mounted');
 	}
 
+	componentDidUpdate(prevProps,prevState) {
+		if(prevState.pageLoaded !== this.state.pageLoaded) {
+			window.objectFitPolyfill();
+		}
+
+	}
+
 	handlePageLoad() {
 		this.setState({pageLoaded: true});
 		console.log('handlePageLoadCalled');
