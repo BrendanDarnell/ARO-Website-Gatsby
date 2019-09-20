@@ -1,9 +1,10 @@
 import React from 'react';
 // import { Link }	from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 import ToggleMenu from './toggle-menu.js';
-
 import styles from './nav-list.module.css';
 
 const navItems = {
@@ -83,7 +84,7 @@ export default class NavList extends React.Component {
 		});
 
 		return (
-			<nav role="navigation">
+			<nav role="navigation" className={styles.nav}>
 				{this.state.showResponsiveMenu ? (
 					<React.Fragment>
 						<button className={styles.closeMenuButton} onClick={this.toggleResponsiveMenu}>X</button>
@@ -95,7 +96,7 @@ export default class NavList extends React.Component {
 					</React.Fragment> )
 				:(
 					<React.Fragment>
-						<button className={styles.openMenuButton} onClick={this.toggleResponsiveMenu}><i className="fas fa-bars"></i></button>
+						<button className={styles.openMenuButton} onClick={this.toggleResponsiveMenu}><FontAwesomeIcon icon={faBars}/></button>
 						<div className={styles.navMenuContainer}>
 							<ul className={styles.navMenu}>
 								{navList}
