@@ -1,5 +1,6 @@
 import React from 'react';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import throttle from 'lodash/throttle';
 
 // import aroRot from '../../static/aro-rotation.mp4';
 // import night from '../../static/night.mp4';
@@ -63,13 +64,20 @@ export default class LandingPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			pageLoaded: false
+			pageLoaded: false,
+			pageScrolled: false
 		}
 		this.handlePageLoad = this.handlePageLoad.bind(this);
+		this.initVideoHeaderPosition = this.initVideoHeaderPosition.bind(this);
+		this.handleScroll = this.handleScroll.bind(this);
+		this.videoHeader = React.createRef();
 	}
 
 	componentDidMount() {
 		this.handlePageLoad();
+		console.log(document.readyState);
+		this.initVideoHeaderPosition();
+		let scrollPage = window.addEventListener('scroll', throttle(this.handleScroll, 100));
 		// this.test = 'foobar';
 		// this.dbl = window.addEventListener('dblclick', this.handlePageLoad);
 		// this.load = window.addEventListener('load', ()=>console.log('loaded'));
@@ -90,28 +98,67 @@ export default class LandingPage extends React.Component {
 		console.log(this.load, this.dbl, this.test);
 	}
 
+	initVideoHeaderPosition() {
+		const videoHeader = document.getElementById('videoHeader');
+		const initPosition = window.pageYOffset + videoHeader.getBoundingClientRect().top;
+		this.setState({initVideoHeaderPosition: initPosition}); 
+	}
+
+	handleScroll() {
+		const videoHeader = document.getElementById('videoHeader');
+		const videoHeaderPosition = videoHeader.getBoundingClientRect();
+		const videoHeaderHeight = videoHeaderPosition.bottom + videoHeaderPosition.top;
+		// const midVideoHeaderPosition = (videoHeaderPosition.top + videoHeaderPosition.bottom)/2;
+		// console.log(midVideoHeaderPosition);
+		const videoHeaderOpacity = 1 - ((this.state.initVideoHeaderPosition - videoHeaderPosition.top)/(this.state.initVideoHeaderPosition + (videoHeaderHeight/2)));
+		// const opacityChange = Math.abs(this.state.videoHeaderOpacity - videoHeaderOpacity)
+		if(window.pageYOffset === 0) {
+			// if(videoHeaderOpacity >= 1 && this.state.videoHeaderOpacity !==1) {
+			// 	return this.setState({videoHeaderOpacity: 1, pageScrolled: false});	
+			// }
+			if(this.state.pageScrolled !== false) {
+				this.setState({pageScrolled: false});
+			}
+			this.videoHeader.current.style.opacity = 1;
+
+		}
+		else {
+			if(this.state.pageScrolled !== true) {
+				this.setState({pageScrolled: true});
+			}
+			if(videoHeaderOpacity > 0 && videoHeaderOpacity < 1) {
+				this.videoHeader.current.style.opacity = videoHeaderOpacity;
+			}
+			else if(videoHeaderOpacity <= 0 && this.state.videoHeaderOpacity !== 0) {
+				this.videoHeader.current.style.opacity = 0;
+			}
+		}
+	}
+
 	render() {
 		
 		return (
 			<React.Fragment>
 				<Head/>
 				<header className={styles.landingHeader} role="banner">
-					<div className={styles.logoNavContainer}>
+					<div className={`${styles.logoNavContainer} ${this.state.pageScrolled && styles.active}`}>
 						<img className={styles.logo} src={logo} alt="Alpine Research Optics Logo"/>
-						<NavList hasTopLevelLink={false}/>
+						<NavList hasTopLevelLink={false} active={this.state.pageScrolled ? "active" : null}/>
 					</div>
 				</header>
 				
 				<main role="main">
 					{this.state.pageLoaded && 
 						<VideoBanner video={introVid}/>}
-					<div className={styles.videoHeader}>
+					<div className={styles.videoHeader} ref={this.videoHeader} id="videoHeader" style={{opacity: 1}}>
 						<h1 className={styles.h1}>Alpine Research Optics</h1>
 						<h2 className={styles.bannerText}>A Precision Optics Company</h2>
 						<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
 					</div>
+					<div>
+					</div>
 				</main>
-				{/*<Footer/>*/}
+				<Footer/>
 			</React.Fragment>
 		)
 	}

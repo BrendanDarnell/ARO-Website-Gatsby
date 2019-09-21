@@ -190,6 +190,10 @@
 		width: 100%;
 	}
 
+	.nav-button.active {
+		color: #484848;
+	}
+
 	.link {
 		text-decoration: none;
 		color: white;

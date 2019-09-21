@@ -46,10 +46,17 @@ h2 {
 	/*background-color: white;*/
 	background-color: transparent;
 	z-index: 10;
+	/*box-shadow:  0 2px 10px black;*/
+}
+
+.logo-nav-container.active {
+	background-color: white;
+	box-shadow:  0 2px 10px black;
 }
 
 .logo-nav-container:hover {
-	background-color: rgba(0, 0, 0, .40);
+	/*background-color: rgba(0, 0, 0, .40);*/
+	box-shadow:  0 2px 10px black;
 }
 
 .logo {

@@ -78,7 +78,7 @@ export default class NavList extends React.Component {
 			}
 			return (
 				<li key={item} className={styles.navMenuItem}>
-					<ToggleMenu id={item.toLowerCase().replace(/ /g,'-')} subMenuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item.toLowerCase()]} buttonName={item} buttonClassNames={styles.navButton}/>
+					<ToggleMenu id={item.toLowerCase().replace(/ /g,'-')} subMenuItems={navItems[item]} handleClick={this.toggleSubMenus} showMenu={this.state.showSubMenus[item.toLowerCase()]} buttonName={item} buttonClassNames={`${styles.navButton} ${this.props.active && styles.active}`}/>
 				</li>
 			);
 		});
