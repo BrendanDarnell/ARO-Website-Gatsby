@@ -74,10 +74,16 @@ export default class LandingPage extends React.Component {
 	}
 
 	componentDidMount() {
-		this.handlePageLoad();
 		console.log(document.readyState);
+		if (document.readyState === 'complete') {
+			this.handlePageLoad();
+		}
+		else{
+			let loadListener = window.addEventListener('load', this.handlePageLoad);
+		}
+		// this.handlePageLoad();
 		this.initVideoHeaderPosition();
-		let scrollPage = window.addEventListener('scroll', throttle(this.handleScroll, 100));
+		let scrollListener = window.addEventListener('scroll', throttle(this.handleScroll, 100));
 		// this.test = 'foobar';
 		// this.dbl = window.addEventListener('dblclick', this.handlePageLoad);
 		// this.load = window.addEventListener('load', ()=>console.log('loaded'));
