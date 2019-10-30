@@ -14,9 +14,7 @@ import 'objectFitPolyfill';
 // <video autoPlay muted loop className="background-video">
 				// 	<source src={video} type="video/mp4"/>
 				// </video>
-let videoOptions = {
 
-}
 
 export default function VideoBanner(props) {
 	return (

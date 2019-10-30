@@ -129,7 +129,7 @@ export default class LandingPage extends React.Component {
 			if(videoHeaderOpacity > 0 && videoHeaderOpacity < 1) {
 				this.videoHeader.current.style.opacity = videoHeaderOpacity;
 			}
-			else if(videoHeaderOpacity <= 0 && this.state.videoHeaderOpacity !== 0) {
+			else if(videoHeaderOpacity <= 0 && this.videoHeader.current.style.opacity !== 0) {
 				this.videoHeader.current.style.opacity = 0;
 			}
 		}

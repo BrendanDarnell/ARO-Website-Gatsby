@@ -129,13 +129,22 @@ export default class VideoShow extends React.Component {
 			
 		// );
 		return (
-			<SwitchTransition>
-				<CSSTransition  timeout={5000} classNames={videoAnimation} key={this.state.currVideo} onEntered={()=>console.log('onEnteredCB')}>
-					<div>
-						<VideoBanner video={this.props.videos[this.state.currVideo]}/>
-					</div>	
-				</CSSTransition>
-			</SwitchTransition>	
+			this.props.headings.map((heading, index) => {
+				return (
+					<h2 className={styles.heading} key={heading}>{heading}</h2>
+					<p className={styles.caption} key={caption}>{caption}</p>
+				)
+			})			
+			<div className={styles.videoShowContainer}>
+				<SwitchTransition>
+					<CSSTransition  timeout={5000} classNames={videoAnimation} key={this.state.currVideo} onEntered={()=>console.log('onEnteredCB')}>
+						<div>
+							<VideoBanner video={this.props.videos[this.state.currVideo]}/>
+						</div>	
+					</CSSTransition>
+				</SwitchTransition>	
+
+			</div>
 		);
 	}
 }
