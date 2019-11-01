@@ -23,7 +23,7 @@ export default function Footer(props) {
 					Boulder, Co 80301<br/>
 					(303) 444-3420
 				</address>
-				<Map/>
+				{/*<Map/>*/}
 			</div>
 			<h5 className={styles.copyright}>&copy; 2019 Alpine Research Optics</h5>
 		</footer>

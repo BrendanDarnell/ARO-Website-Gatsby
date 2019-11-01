@@ -8,12 +8,14 @@
 }
 
 .video-div {
-	height: 85vh;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	margin: 0;
-	/*background-color: rgba(0, 0, 0, .75);*/
+	background-color: rgba(0, 0, 0, .40);
 	/*purple background*/
-	background-color: rgba(39, 9, 35, .80);
+	/*background-color: rgba(39, 9, 35, .80);*/
 	overflow: hidden;
-	margin-top: 10vh;
+	/*margin-top: 10vh;*/
+	position: fixed;
+	z-index: -10;
 }
