@@ -16,6 +16,7 @@ import logo from '../../static/logo.png';
 // import companyImg from '../images/company.jpg';
 
 import styles from './index.module.css';
+import Header from '../components/header.js';
 // import VideoShow from '../components/video-show.js';
 import VideoBanner from '../components/video-banner.js';
 // import PageCard from './page-card.js';
@@ -146,12 +147,13 @@ export default class LandingPage extends React.Component {
 		return (
 			<React.Fragment>
 				<Head/>
-				<header className={styles.landingHeader} role="banner">
+				{/*<header className={styles.landingHeader} role="banner">
 					<div className={`${styles.logoNavContainer} ${this.state.pageScrolled && styles.active}`}>
 						<img className={styles.logo} src={logo} alt="Alpine Research Optics Logo"/>
 						<NavList hasTopLevelLink={false} active={this.state.pageScrolled ? "active" : null}/>
 					</div>
-				</header>
+				</header>*/}
+				<Header active={this.state.pageScrolled}/> 
 				
 				<main role="main">
 					{this.state.pageLoaded && 
@@ -161,8 +163,10 @@ export default class LandingPage extends React.Component {
 						<h2 className={styles.bannerText}>A Precision Optics Company</h2>
 						<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
 					</div>
-					<div>
-					</div>
+					<section className="aroExperience">
+						<h2 className="aroExperienceHeader">THE ARO EXPERIENCE</h2>
+					</section>
+					
 				</main>
 				<Footer/>
 			</React.Fragment>
