@@ -156,15 +156,71 @@ export default class LandingPage extends React.Component {
 				<Header active={this.state.pageScrolled}/> 
 				
 				<main role="main">
-					{this.state.pageLoaded && 
-						<VideoBanner video={introVid}/>}
-					<div className={styles.videoHeader} ref={this.videoHeader} id="videoHeader" style={{opacity: 1}}>
-						<h1 className={styles.h1}>Alpine Research Optics</h1>
-						<h2 className={styles.bannerText}>A Precision Optics Company</h2>
-						<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
+					<div className={styles.bannerContainer}>
+						{this.state.pageLoaded && 
+							<VideoBanner video={introVid}/>}
+						<div className={styles.videoHeading} ref={this.videoHeader} id="videoHeader" style={{opacity: 1}}>
+							<h1 className={styles.h1}>Alpine Research Optics</h1>
+							<h2 className={styles.bannerText}>A Precision Optics Company</h2>
+							<AniLink to={'get-in-touch'} cover direction="right" duration={2} bg="#5b58a5" className={styles.contact}>Get In Touch</AniLink>
+						</div>
 					</div>
-					<section className="aroExperience">
-						<h2 className="aroExperienceHeader">THE ARO EXPERIENCE</h2>
+					
+					<section className={styles.aroExperience}>
+						<h2 className={styles.aroExperienceHeading}>THE ARO EXPERIENCE</h2>
+						<p className={styles.aroExperienceIntro}>
+							ARO has been a vertically integrated precision optics since 1991.  
+							ARO’s 40,000 ft<sup>2</sup> facility gives us plenty of room for the ability to 
+							control quality inputs and outputs from fabriation through assembly. 
+						</p>
+						<ul className={styles.aroExperienceList}>
+							<li className={styles.aroExperienceItem}>
+								<h3 className={styles.aroExperienceItemHeading}>Who We Are</h3>
+								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+								</p>
+								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							</li>
+							<li className={styles.aroExperienceItem}>
+								<h3 className={styles.aroExperienceItemHeading}>Our Facility</h3>
+								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+								</p>
+								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							</li>
+							<li className={styles.aroExperienceItem}>
+								<h3 className={styles.aroExperienceItemHeading}>Custom Optics</h3>
+								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+								</p>
+								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							</li>
+							<li className={styles.aroExperienceItem}>
+								<h3 className={styles.aroExperienceItemHeading}>Beyond Optics</h3>
+								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+								</p>
+								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							</li>
+							<li className={styles.aroExperienceItem}>
+								<h3 className={styles.aroExperienceItemHeading}>Metrology</h3>
+								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+								</p>
+								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							</li>
+						</ul> 
+
 					</section>
 					
 				</main>

@@ -18,7 +18,7 @@ module.exports = {
   			resolve: 'gatsby-plugin-web-font-loader',
   			options: {
   				google: {
-  					families: ['Montserrat', 'Open Sans']
+  					families: ['Montserrat Condensed:400,700,900', 'Open Sans']
   				}
   			}
   		}
