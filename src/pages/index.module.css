@@ -115,7 +115,8 @@ h2 {
 
 .aroExperience {
 	min-height: 100vh;
-	background-color: #E1DFF0;
+	/*background-color: #E1DFF0;*/
+	background-color: #201E5C;
 	padding-top: 15vh;
 }
 
@@ -124,7 +125,8 @@ h2 {
 	text-align: center;
 	font-weight: 700;
     font-size: 3.5em;
-    color: #201E5C;
+    /*color: #201E5C;*/
+    color: #E1DFF0;
     text-shadow: 2px 2px 1px rgba(0,0,0,.5);
     margin-bottom: 8vh;
 }
@@ -132,7 +134,8 @@ h2 {
 .aroExperienceHeading::after {
 	content: ' ';
 	display: block;
-	background-color: #201E5C;
+	/*background-color: #201E5C;*/	
+	background-color: #E1DFF0;
 	height: 2px;
 	width: 40%;
     margin-left: auto;
@@ -141,7 +144,8 @@ h2 {
 }
 
 .aroExperienceIntro {
-	color: #2B2B2B;
+	/*color: #2B2B2B;*/
+	color: #E1DFF0;
 	margin-left: 2%;
 	margin-right: 2%;
 	font-size: 1.5em;
@@ -152,31 +156,85 @@ h2 {
 	list-style: none;
 	padding-left: 0;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
+	flex-wrap: nowrap;
 	margin-top: 10vh;
 }
 
 .aroExperienceItem {
-	flex-basis: 50%;
-	min-width: 50%;
-	border: 1px solid black;
+	width: 100%;
+	/*flex-basis: 50%;
+	min-width: 50%;*/
+	display: flex;
+	flex-direction: row;
+	/*border: 1px solid black;*/
+	/*padding-left: 2%;
+	padding-right: 2%;*/
+}
+
+.aroExperienceItem.reverse {
+	flex-direction: row-reverse;
+}
+
+.white.aroExperienceItem {
+	background-color: #E1DFF0;
+}
+
+.purple.aroExperienceItem {
+	background-color: #5C59B3;
+}
+
+.blue.aroExperienceItem {
+	background-color: #201E5C;
+}
+
+.aroExperienceItemContent {
 	padding-left: 2%;
 	padding-right: 2%;
+}
+
+.aroExperienceItemImage {
+	margin: 3%;
+}
+
+.aroExperienceItemImage img {
+	object-fit: cover;
+	object-position: bottom left;
+	height: 100%;
+	width: 100%;
+}
+
+.aroExperienceItemContent, .aroExperienceItemImage {
+	width: 50%;
 }
 
 .aroExperienceItemHeading {
 	text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     font-size: 1.8em;
-    color: #201E5C;
 }
+
+.white .aroExperienceItemHeading {
+	color: #201E5C;
+} 
+
+.purple .aroExperienceItemHeading, .blue .aroExperienceItemHeading  {
+	color: white;
+} 
 
 .aroExperienceItemText {
 	font-size: 1.1em;
 }
+
+.white .aroExperienceItemText {
+	color: #2B2B2B;
+} 
+
+.purple .aroExperienceItemText, .blue .aroExperienceItemText {
+	color: white;	
+} 
 
 .aroExperienceLink {
 	margin-left: auto;
@@ -195,12 +253,14 @@ h2 {
     cursor: pointer;
 }
 
+
+
 /*.aroExperienceItem.ourFacility {
 	background-image: url("../../static/building-background.png");
 	background-size: cover;
 	background-position: bottom;
-}*/
-
+}
+*/
 /*nav {
 	flex-basis: 30%;
 	min-width: 30%;

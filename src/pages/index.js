@@ -24,6 +24,7 @@ import VideoBanner from '../components/video-banner.js';
 import NavList from '../components/nav-list.js';
 import Head from '../components/head.js';
 import Footer from '../components/footer.js';
+import building from '../../static/company.jpg';
 // import ContactMenu from '../components/contact-menu.js';
 // import NewsTicker from '../components/news-ticker.js'
 
@@ -174,50 +175,75 @@ export default class LandingPage extends React.Component {
 							control quality inputs and outputs from fabriation through assembly. 
 						</p>
 						<ul className={styles.aroExperienceList}>
-							<li className={styles.aroExperienceItem}>
-								<h3 className={styles.aroExperienceItemHeading}>Who We Are</h3>
-								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
-									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
-									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
-									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
-								</p>
-								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							<li className={`${styles.aroExperienceItem} ${styles.white}`}>
+								<div className={styles.aroExperienceItemContent}>
+									<h3 className={styles.aroExperienceItemHeading}>Who We Are</h3>
+									<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+										Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+										Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+										purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+									</p>
+									<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+								</div>
+								<div className={styles.aroExperienceItemImage}>
+									<img src={building} alt="aro-facility"/>
+								</div>
 							</li>
-							<li className={styles.aroExperienceItem}>
-								<h3 className={styles.aroExperienceItemHeading}>Our Facility</h3>
-								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
-									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
-									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
-									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
-								</p>
-								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							<li className={`${styles.aroExperienceItem} ${styles.purple} ${styles.reverse}`}>
+								<div className={styles.aroExperienceItemContent}>
+									<h3 className={styles.aroExperienceItemHeading}>Our Facility</h3>
+									<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+										Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+										Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+										purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+									</p>
+									<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+								</div>
+								<div className={styles.aroExperienceItemImage}>
+									<img src={building} alt="aro-facility"/>
+								</div>
 							</li>
-							<li className={styles.aroExperienceItem}>
-								<h3 className={styles.aroExperienceItemHeading}>Custom Optics</h3>
-								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
-									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
-									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
-									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
-								</p>
-								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							<li className={`${styles.aroExperienceItem} ${styles.white}`}>
+								<div className={styles.aroExperienceItemContent}>
+									<h3 className={styles.aroExperienceItemHeading}>Custom Optics</h3>
+									<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+										Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+										Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+										purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+									</p>
+									<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+								</div>
+								<div className={styles.aroExperienceItemImage}>
+									<img src={building} alt="aro-facility"/>
+								</div>
 							</li>
-							<li className={styles.aroExperienceItem}>
-								<h3 className={styles.aroExperienceItemHeading}>Beyond Optics</h3>
-								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
-									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
-									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
-									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
-								</p>
-								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							<li className={`${styles.aroExperienceItem} ${styles.blue} ${styles.reverse}`}>
+								<div className={styles.aroExperienceItemContent}>
+									<h3 className={styles.aroExperienceItemHeading}>Beyond Optics</h3>
+									<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+										Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+										Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+										purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+									</p>
+									<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+								</div>
+								<div className={styles.aroExperienceItemImage}>
+									<img src={building} alt="aro-facility"/>
+								</div>
 							</li>
-							<li className={styles.aroExperienceItem}>
-								<h3 className={styles.aroExperienceItemHeading}>Metrology</h3>
-								<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
-									Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
-									Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
-									purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
-								</p>
-								<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+							<li className={`${styles.aroExperienceItem} ${styles.white}`}>
+								<div className={styles.aroExperienceItemContent}>
+									<h3 className={styles.aroExperienceItemHeading}>Metrology</h3>
+									<p className={styles.aroExperienceItemText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus posuere vulputate. Duis et sapien et arcu congue aliquet. 
+										Cras ut tellus ultrices, consectetur lacus id, porttitor arcu. Integer ut commodo ligula. Phasellus vulputate nisi sapien. Nulla facilisi. 
+										Nam fringilla accumsan pellentesque. Aliquam iaculis mauris magna, non pharetra quam tincidunt a. Sed suscipit, massa id faucibus ultricies, 
+										purus erat euismod odio, vitae sollicitudin nisl ipsum nec odio.
+									</p>
+									<a href="#videoHeader" className={styles.aroExperienceLink}>Learn More</a>
+								</div>
+								<div className={styles.aroExperienceItemImage}>
+									<img src={building} alt="aro-facility"/>
+								</div>
 							</li>
 						</ul> 
 
